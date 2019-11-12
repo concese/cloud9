@@ -25,7 +25,8 @@ set -e
 #read -p "FILE (default Developer configuration file: build.develop.props) = " FILE
 FILE=${FILE:-build.develop.props}
 echo FILE=$FILE>>$CONF
-#echo "project.url.base = https://$ENVIRONMENT_ID.vfs.cloud9.$REGION_ID.amazonaws.com/$REPO/$SITE">>$FILE
+# echo "project.url.base = https://$ENVIRONMENT_ID.vfs.cloud9.$REGION_ID.amazonaws.com/$REPO/build">>$FILE
+echo "project.url.base = https://$USER_C9.c9.fpfis.tech.ec.europa.eu/$REPO/build">>$FILE
 echo "project.url.production = $URL">>$FILE
 echo "project.id = $SITE">>$FILE
 echo "project.name = Subsite $SITE">>$FILE
@@ -35,11 +36,12 @@ echo "share.path = /tmp/cache">>$FILE
 echo "phpcs.reports = full">>$FILE
 echo "behat.formatter.name = pretty">>$FILE
 echo "db.dl.password = $ASDA">>$FILE
-echo 'db.dl.username = ${project.id}'>>$FILE
+echo 'db.dl.username = master-cem'>>$FILE
 echo 'db.name = ${project.id}'>>$FILE
 #echo 'behat.base_url = ${project.url.base}'>>$FILE
 rm resources/composer.lock;
 cd $DIR/$REPO;
+composer install
 phing build-platform;
 phing build-subsite-dev;phing install-$2
 #sed -i "/ec2-user/s/\/home\/ec2-user\/environment\/$REPO\/build\///" build/sites/default/settings.php

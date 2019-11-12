@@ -13,8 +13,9 @@ read -p "REPS (y/n) = " REPS;
 	REPS=${REPS:-n};echo REPS=$REPS>>$CONF
 read -p "VERSION (2.x.y: please change it if the default value $DEFVER is not appropriate) = " VERSION;
 	VERSION=${VERSION:-"$DEFVER"};echo VERSION=$VERSION 1>>$CONF
-read -p "ASDA (password: please leave it blank ONLY for a new subsite) = " ASDA;
-	ASDA=${ASDA:-NOPASSWORD};echo ASDA=$ASDA>>$CONF
+# read -p "ASDA (password: please leave it blank ONLY for a new subsite) = " ASDA;
+#	ASDA=${ASDA:-NOPASSWORD};echo ASDA=$ASDA>>$CONF
+	ASDA=$ASDA_PASSWD	# cloud9.conf
 read -p "URL (default https://ec.europa.eu/$SITE) = " URL;
 	URL=${URL:-"https://ec.europa.eu/$SITE"};echo URL=$URL>>$CONF
 REP0=$([ $REPS = y ]&&echo reps-$SITE-reference||echo $SITE-reference);#read -p "REPO (default $REP0) = " REPO;
