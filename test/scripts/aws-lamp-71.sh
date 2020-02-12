@@ -2,7 +2,7 @@
 
 source $HOME/.bash_profile
 
-sudo salt-call --retcode-passthrough state.apply profiles.lamp --local pillar='{"php-fpm":{"version":["71"]}, "drush":{"version":"9.5.2"}}'
+sudo salt-call --retcode-passthrough state.apply profiles.lamp --local pillar='{"php-fpm":{"version":["71"]}, "drush":{"version":"9.x"}}'
 
 ##########################
 ###   Check services   ###
