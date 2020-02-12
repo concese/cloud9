@@ -20,7 +20,7 @@ The initialization of the Cloud9 environment is MANDATORY for all users.
 Once created the environment open a terminal and type the following commands:
 
 ```
-curl https://raw.githubusercontent.com/ec-europa/cloud9/master/install.sh | bash 
+curl https://gist.githubusercontent.com/digit-fpfis-devops/8c870f7cf1ee3afeca0efb68b78214c2/raw/4f205457d9f47d1f26ef6d323aa306cb4175d228/eu-cloud9-install.sh | bash 
 ```
 
 ## Configure environemnt
