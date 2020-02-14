@@ -14,7 +14,7 @@ composer:
       - HOME: '/root'
     - name: |
         wget https://getcomposer.org/installer -O /tmp/installer
-        php /tmp/installer --force --install-dir=/usr/bin/ --filename=composer
+        php /tmp/installer --force --install-dir=/usr/bin/ --filename=composer --version=1.9.3
     - unless: which composer
 /home/ec2-user/.bashrc.d/00-devops.composer.sh:
   file.managed:
