@@ -7,5 +7,6 @@ include:
   - cloud9.init-js
   - cloud9.c9-js
   - frp
+  - docker
   - config.setSaltMinionID
   - config.route53

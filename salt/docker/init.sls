@@ -3,7 +3,7 @@
 compose:
   pip.installed:
    {%- if docker_version %}
-    - name: docker-compose == {{ docker_version }}
+    - name: docker == {{ docker_version }}
     {%- else %}
     - name: docker
     {%- endif %}
