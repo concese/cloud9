@@ -62,3 +62,6 @@ frp:
   host: frps_host
   port: frps_port
   token: frps_token
+
+composer:
+  version: 1.9.3

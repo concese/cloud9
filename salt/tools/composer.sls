@@ -1,6 +1,9 @@
 # Get php version in grain, or in version-default on pillar
 {% set php_versions = salt['grains.get']('php-fpm:version', salt['pillar.get']('php-fpm:version-default',[ 56 ])) %}
 
+#Get composer version in pillar or used default version
+{% set composer_version = salt['pillar.get']('composer:version', 1.9.3) %}
+
 # Override by pillar if defined (so by cli pillar value)
 {% set php_versions_pillar = salt['pillar.get']('php-fpm:version') %}
 {%- if php_versions_pillar != "" %}
@@ -14,7 +17,7 @@ composer:
       - HOME: '/root'
     - name: |
         wget https://getcomposer.org/installer -O /tmp/installer
-        php /tmp/installer --force --install-dir=/usr/bin/ --filename=composer --version=1.9.3
+        php /tmp/installer --force --install-dir=/usr/bin/ --filename=composer --version={{ composer_version }}
     - unless: which composer
 /home/ec2-user/.bashrc.d/00-devops.composer.sh:
   file.managed:
