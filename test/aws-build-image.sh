@@ -23,7 +23,7 @@ docker pull selenium/standalone-chrome-debug
 sudo yum install php56-gd -y
 sudo sed -i 's/memory_limit = 128M/memory_limit = 2048M/g' /etc/php-5.6.ini
 wget https://getcomposer.org/installer -O /tmp/installer
-php /tmp/installer --force --filename=composer
+php /tmp/installer --force --filename=composer --version=1.9.3
 # run composer commands
 php composer create-project drush/drush:8 drush8
 php composer create-project drush/drush:9 drush9
