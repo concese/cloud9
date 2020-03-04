@@ -72,7 +72,7 @@ services:
     volumes:
       - /mnt/docker/tmp/node/cache:/root/.npm
       - /mnt/docker/tmp/node/cypress:/root/.cache
-      - /home/ec2-user/environment:/home/ec2-user/environment
+      - /home/ec2-user/environment:/var/www/html
     tty: true
     restart: always
   couchdb:
