@@ -2,7 +2,7 @@
 {% set php_versions = salt['grains.get']('php-fpm:version', salt['pillar.get']('php-fpm:version-default',[ 56 ])) %}
 
 #Get composer version in pillar or used default version
-{% set composer_version = salt['pillar.get']('composer:version', 1.9.3) %}
+{% set composer_version = salt['pillar.get']('composer:version', "1.9.3") %}
 
 # Override by pillar if defined (so by cli pillar value)
 {% set php_versions_pillar = salt['pillar.get']('php-fpm:version') %}
