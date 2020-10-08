@@ -6,4 +6,5 @@ docker-compose-install:
     - name: docker-compose == {{ compose_version }}
     {%- else %}
     - name: docker-compose
-{%- endif %}
+    {%- endif %}
+    - bin_env: /usr/bin/pip
